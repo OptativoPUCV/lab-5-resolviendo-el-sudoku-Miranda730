@@ -85,13 +85,13 @@ List* get_adj_nodes(Node* n){
         for(int k = 1 ; k <= 9 ; k++){
           Node* newNode = copy(n);
           newNode->sudo[i][j] = k;
+          if(is_valid(newNode))
           pushBack(list, newNode);
         }
-        return list;
       }
+      return list;
     }
-  if(is_valid(n))return list;
-  return NULL;
+  return list;
 }
 
 
