@@ -80,3 +80,9 @@ sudoku.c:48:7: error: unused variable 'arreglo1' [-Werror=unused-variable]
        ^~~~~~~~
 cc1.exe: all warnings being treated as errors
 0969001
+Sat, May 17, 2025 12:23:59 AM: 
+ sudoku.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+ tests:  2|4
+total_score: 15/70
+c10a248

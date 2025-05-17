@@ -50,9 +50,9 @@ int is_valid(Node* n){
   int arreglo3[10];
   for(int k = 0 ; k < 9 ; k++){
     for(int p=0;p<9;p++){
-      int arreglo1[p];
-      int arreglo2[p];
-      int arreglo3[p];
+      arreglo1[p] = 0;
+      arreglo2[p] = 0;
+      arreglo3[p] = 0;
       int numFila = n->sudo[k][p];
       if(numFila != 0){
         if(arreglo1[numFila] == 1)return 0;
