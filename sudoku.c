@@ -123,8 +123,13 @@ Node* DFS(Node* initial, int* cont){
     push(visited, n);
     (*cont)++;
 
-    if(is_valid(n))return n;
-
+    if(is_valid(n)){
+      clean(visited);
+      free(visited);
+      clean(S);
+      free(S);
+      return n;
+    }
     List* NodosAdj = get_adj_nodes(n);
     for(Node* aux = first(NodosAdj) ; aux != NULL ; aux = next(NodosAdj)){
       if(!is_visited(visited, aux))push(S, aux);
