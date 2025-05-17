@@ -57,7 +57,7 @@ int is_valid(Node* n){
       }
       int numCol = n->sudo[p][k];
       if(numCol != 0){
-        if(arreglo2[numCol] == 1)return 1;
+        if(arreglo2[numCol] == 1)return 0;
         arreglo2[numCol] = 1;
       }
       int i=3*(k/3) + (p/3) ;
