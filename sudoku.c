@@ -45,11 +45,14 @@ void print_node(Node* n){
 }
 
 int is_valid(Node* n){
-  int arreglo1[10] = {0};
-  int arreglo2[10] = {0};
-  int arreglo3[10] = {0};
+  int arreglo1[10];
+  int arreglo2[10];
+  int arreglo3[10];
   for(int k = 0 ; k < 9 ; k++){
     for(int p=0;p<9;p++){
+      int arreglo1[p];
+      int arreglo2[p];
+      int arreglo3[p];
       int numFila = n->sudo[k][p];
       if(numFila != 0){
         if(arreglo1[numFila] == 1)return 0;
