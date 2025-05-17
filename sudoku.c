@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include "list.h"
 
 
@@ -44,8 +45,31 @@ void print_node(Node* n){
 }
 
 int is_valid(Node* n){
-
-    return 1;
+  int arreglo1[10] = {0};
+  int arreglo2[10] = {0};
+  int arreglo3[10] = {0};
+  for(int k = 0 ; k < 9 ; k++){
+    for(int p=0;p<9;p++){
+      int numFila = n->sudo[k][p];
+      if(numFila != 0){
+        if(arreglo1[numFila] == 1)return 0;
+        arreglo1[numFila] = 1;
+      }
+      int numCol = n->sudo[p][k];
+      if(numCol != 0){
+        if(arreglo2[numCol] == 1)return 1;
+        arreglo2[numCol] = 1;
+      }
+      int i=3*(k/3) + (p/3) ;
+      int j=3*(k%3) + (p%3) ;
+      int numMatriz = n->sudo[i][j];
+      if(numMatriz != 0){
+        if(arreglo3[numMatriz] == 1)return 0;
+        arreglo3[numMatriz] = 1;
+      }
+    }
+  }
+  return 1;
 }
 
 
