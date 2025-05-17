@@ -51,7 +51,7 @@ int is_valid(Node* n){
 
 List* get_adj_nodes(Node* n){
     List* list=createList();
-    if(n == NULL || n->sudo[0][0] == 0) return list;
+    if(n == NULL || n->sudo[0][0] == '0') return list;
 
     for(int i = 0 ; i < 3 ; i++)
       for(int j = 0 ; j < 3 ; j++)
