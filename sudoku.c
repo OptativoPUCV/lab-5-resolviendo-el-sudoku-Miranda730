@@ -123,7 +123,7 @@ Node* DFS(Node* initial, int* cont){
     push(visited, n);
     (*cont)++;
 
-    if(is_valid(n)){
+    if(is_final(n)){
       clean(visited);
       free(visited);
       clean(S);
