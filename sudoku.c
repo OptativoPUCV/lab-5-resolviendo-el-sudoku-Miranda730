@@ -104,7 +104,33 @@ int is_final(Node* n){
   return 1;
 }
 
+int is_visited(List* lista, Node* n){
+  for(void* v = first(lista) ; v != NULL ; v = next(lista)){
+    if(v == n)return 1;
+  }
+  return 0;
+}
+
 Node* DFS(Node* initial, int* cont){
+  Stack* S = createStack;
+  List* visited = createList;
+
+  push(S, initial);
+  while(get_size(S) != 0){
+    Node* n = top(S); pop(S);
+    if(is_visited(visited, n)) continue;
+
+    push(visited, n);
+    (*cont)++;
+
+    if(is_valid(n))return n;
+
+    List* NodosAdj = get_adj_nodes(n);
+    for(Node* aux = first(NodosAdj) ; aux != NULL ; aux = next(NodosAdj)){
+      if(!is_visited(visited, aux))push(S, aux);
+    }
+    
+  }
   return NULL;
 }
 

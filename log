@@ -149,3 +149,17 @@ Sat, May 17, 2025  3:52:44 PM:
  tests:  7|1
 total_score: 55/70
 5adb788
+Sat, May 17, 2025  6:10:48 PM: 
+ sudoku.c | 26 ++++++++++++++++++++++++++
+ 1 file changed, 26 insertions(+)
+Compilation failed
+In file included from test.c:5:0:
+sudoku.c: In function 'DFS':
+sudoku.c:115:14: error: initialization from incompatible pointer type [-Werror=incompatible-pointer-types]
+   Stack* S = createStack;
+              ^~~~~~~~~~~
+sudoku.c:116:19: error: initialization from incompatible pointer type [-Werror=incompatible-pointer-types]
+   List* visited = createList;
+                   ^~~~~~~~~~
+cc1.exe: all warnings being treated as errors
+0a6c669
